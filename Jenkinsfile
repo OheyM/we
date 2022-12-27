@@ -15,7 +15,7 @@ pipeline {
             steps {
                 sh 'scp /home/ubuntu/.jenkins/workspace/Dev1/target/webappwe.war ubuntu@172.31.92.50:/var/lib/tomcat8/webapps/qaenv.war'
             }
-i       }
+        }
         stage('Testing') {
             steps {
                 echo 'Testing has passed'
