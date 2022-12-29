@@ -1,9 +1,19 @@
 pipeline {
     agent any
     stages {
-        stage('Download') {
+        stage('checkout') {
             steps {
                 git branch: 'we', url: 'https://github.com/OheyM/we.git'
+            }
+        }
+        stage('sonarqube quality scan') {
+            steps {
+                sh 'mvn sonar:sonar'
+            }
+        }
+        stage('Quality gate') {
+            steps {
+                waitForQualityGate abortPipeline: true
             }
         }
         stage('Build') {
