@@ -1,0 +1,4 @@
+mvn sonar:sonar \
+  -Dsonar.projectKey=Devops \
+  -Dsonar.host.url=http://3.238.142.77:9000 \
+  -Dsonar.login=3d336c3e61be8d7fab6c7d729376eda9923de729
