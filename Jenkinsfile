@@ -11,11 +11,6 @@ pipeline {
                 sh 'mvn sonar:sonar'
             }
         }
-        stage('Quality gate') {
-            steps {
-                waitForQualityGate abortPipeline: false
-            }
-        }
         stage('Build') {
             steps {
                 sh 'mvn package'
